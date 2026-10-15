@@ -1,4 +1,4 @@
-﻿
+﻿using EmployeeManagement;
 string name = "Mohit";
 int age = 35;
 decimal salary = 125000.50m;
@@ -106,6 +106,58 @@ Console.WriteLine($"Employee Name: {emp.Name}");
 Console.WriteLine($"Employee Salary: {emp.Salary:F2}");
 Console.WriteLine($"Employee Department: {emp.Department}");
 
+List<Products> productsList = [
+    new ()
+    {
+        Id = 1,
+        Name = "Laptop",
+        Price = 100,
+        Category = "Laptop",
+        IsAvailable = false
+    },
+    new ()
+    {
+        Id = 2,
+        Name = "Mouse",
+        Price = 200,
+        Category = "Mouse",
+        IsAvailable = false
+    },
+    new ()
+    {
+        Id = 3,
+        Name = "Keyboard",
+        Price = 300,
+        Category = "Keyboard",
+        IsAvailable = false
+    },
+    new ()
+    {
+        Id = 4,
+        Name = "Monitor",
+        Price = 400,
+        Category = "Monitor",
+        IsAvailable = false
+    },
+    new Products()
+    {
+        Id = 5,
+        Name = "Phone",
+        Price = 500,
+        Category = "Phone",
+        IsAvailable = false
+    }
+];
+
+foreach (Products item in productsList)
+{
+    Console.WriteLine(
+        $"{item.Name} - ₹{item.Price:N2} - " +
+        $"Category: {item.Category} - " +
+        $"Available: {item.IsAvailable}"
+    );
+}
+
 static int Add(int x, int y)
 {
     return x + y;
@@ -115,15 +167,4 @@ static void PrintEmployee(string name, int age, decimal salary)
 {
     Console.WriteLine(
         $"Name: {name}, Age: {age}, Salary: {salary:F2}");
-}
-
-public class Employee
-{
-    public int Id { get; set; }
-
-    public string Name { get; set; } = string.Empty;
-
-    public decimal Salary { get; set; }
-
-    public string Department { get; set; } = string.Empty;
 }
