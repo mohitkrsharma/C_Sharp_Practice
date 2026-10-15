@@ -1,39 +1,45 @@
-﻿// See https://aka.ms/new-console-template for more information
-/*Console.WriteLine("Hello, World!");*/
-
+﻿
 string name = "Mohit";
 int age = 35;
 decimal salary = 125000.50m;
 bool isActive = true;
 
-/*var surName = "Sharma";
-Console.WriteLine($"{surName}");*/
-Console.WriteLine($"Hello, {name}!\nYou are {age} years old.\nYou salary is {salary}.\nYour status is {isActive}.");
+Console.WriteLine("=== Employee Details ===");
+Console.WriteLine($"Hello, {name}!");
+Console.WriteLine($"You are {age} years old.");
+Console.WriteLine($"Your salary is {salary:F2}.");
+Console.WriteLine($"Your status is {isActive}.");
+
+Console.WriteLine("\n=== Arithmetic Operators ===");
 
 int a = 10;
 int b = 3;
 
-Console.WriteLine(a + b);
-Console.WriteLine(a - b);
-Console.WriteLine(a * b);
-Console.WriteLine(a / b);
-Console.WriteLine(a % b);
+Console.WriteLine($"Addition: {a + b}");
+Console.WriteLine($"Subtraction: {a - b}");
+Console.WriteLine($"Multiplication: {a * b}");
+Console.WriteLine($"Division: {a / b}");
+Console.WriteLine($"Remainder: {a % b}");
 
-bool isEligible = (age >= 18 && age <= 65);
-Console.WriteLine(isEligible);
+Console.WriteLine("\n=== Conditional Statements ===");
 
-if (salary >= 200000)
+bool isEligible = age >= 18 && age <= 65;
+Console.WriteLine($"Eligible: {isEligible}");
+
+if (salary >= 200000m)
 {
-    Console.WriteLine("High");
+    Console.WriteLine("Salary Category: High");
 }
-else if (salary >= 100000)
+else if (salary >= 100000m)
 {
-    Console.WriteLine("Medium");
+    Console.WriteLine("Salary Category: Medium");
 }
 else
 {
-    Console.WriteLine("Low");
+    Console.WriteLine("Salary Category: Low");
 }
+
+Console.WriteLine("\n=== Switch Statement ===");
 
 string department = "IT";
 
@@ -56,6 +62,8 @@ switch (department)
         break;
 }
 
+Console.WriteLine("\n=== Arrays and Loops ===");
+
 string[] names =
 [
     "Mohit",
@@ -64,47 +72,58 @@ string[] names =
     "Raj"
 ];
 
-Console.WriteLine(names[0]);
+Console.WriteLine($"First name: {names[0]}");
 
 foreach (string n in names)
 {
     Console.WriteLine(n);
 }
 
+Console.WriteLine("\n=== Methods ===");
+
+int result = Add(2, 3);
+Console.WriteLine($"Addition result: {result}");
+
+PrintEmployee("Mohit", 35, 125000m);
+
+Console.WriteLine("\n=== Null-Conditional Operator ===");
+
+string? middleName = null;
+Console.WriteLine(middleName?.ToUpper() ?? "Middle name not provided");
+
+Console.WriteLine("\n=== Employee Class and Object ===");
+
+Employee emp = new()
+{
+    Id = 1,
+    Name = "Mohit",
+    Salary = 125000m,
+    Department = "IT"
+};
+
+Console.WriteLine($"Employee ID: {emp.Id}");
+Console.WriteLine($"Employee Name: {emp.Name}");
+Console.WriteLine($"Employee Salary: {emp.Salary:F2}");
+Console.WriteLine($"Employee Department: {emp.Department}");
+
 static int Add(int x, int y)
 {
     return x + y;
 }
 
-int result = Add(2, 3);
-Console.WriteLine(result);
-
 static void PrintEmployee(string name, int age, decimal salary)
 {
     Console.WriteLine(
-        $"Name: {name}, Age: {age}, Salary: {salary}"
-    );
+        $"Name: {name}, Age: {age}, Salary: {salary:F2}");
 }
-
-PrintEmployee(
-    "Mohit",
-    35,
-    125000
-);
-
-string? middleName = null;
-Console.WriteLine(middleName?.ToUpper());
 
 public class Employee
 {
     public int Id { get; set; }
-    public string Name { get; set; }
+
+    public string Name { get; set; } = string.Empty;
+
     public decimal Salary { get; set; }
-    public string department { get; set; }
+
+    public string Department { get; set; } = string.Empty;
 }
- Employee emp = new(){
-     Id = 1,
-     Name = "Mohit",
-     Salary = 125000,
-     department = "IT"
- };

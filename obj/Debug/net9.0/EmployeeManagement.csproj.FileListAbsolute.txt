@@ -26,3 +26,4 @@ C:\Users\Mohit Kumar Sharma\RiderProjects\EmployeeManagement\obj\Debug\net9.0\re
 C:\Users\Mohit Kumar Sharma\RiderProjects\EmployeeManagement\obj\Debug\net9.0\EmployeeManagement.pdb
 C:\Users\Mohit Kumar Sharma\RiderProjects\EmployeeManagement\obj\Debug\net9.0\EmployeeManagement.genruntimeconfig.cache
 C:\Users\Mohit Kumar Sharma\RiderProjects\EmployeeManagement\obj\Debug\net9.0\ref\EmployeeManagement.dll
+C:\Users\Mohit Kumar Sharma\RiderProjects\EmployeeManagement\obj\Debug\net9.0\EmployeeManagement.sourcelink.json
