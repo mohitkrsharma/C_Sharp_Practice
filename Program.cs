@@ -177,3 +177,28 @@ Console.WriteLine($"employee id: {secondEmployee.Id},  name: {secondEmployee.Nam
 
 Employee thirdEmployee = new Employee(id: 3, "Mohit", 125000m, "Finance");
 Console.WriteLine($"employee id: {secondEmployee.Id},  name: {thirdEmployee.Name}, salary: {thirdEmployee.Salary}, department: {thirdEmployee.Department}");
+
+Encapsulation enc = new Encapsulation(1, "Mohit", 125000m, "IT");
+
+Console.WriteLine($"Original salary: {employee.Salary:F2}");
+
+enc.UpdateSalary(150000m);
+Console.WriteLine($"Updated salary: {enc.Salary:F2}");
+
+enc.TransferDepartment("Finance");
+Console.WriteLine($"New department: {enc.Department}");
+
+// Uncomment this line and rebuild to see the validation exception:
+// enc.UpdateSalary(-500m);
+
+// This line will not compile because Salary has a private setter:
+// enc.Salary = 200000m;
+
+try
+{
+    enc.UpdateSalary(-500m);
+}
+catch (ArgumentOutOfRangeException ex)
+{
+    Console.WriteLine($"Update rejected: {ex.Message}");
+}
