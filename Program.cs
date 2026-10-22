@@ -93,7 +93,7 @@ Console.WriteLine(middleName?.ToUpper() ?? "Middle name not provided");
 
 Console.WriteLine("\n=== Employee Class and Object ===");
 
-Employee emp = new()
+/*Employee emp = new()
 {
     Id = 1,
     Name = "Mohit",
@@ -104,7 +104,7 @@ Employee emp = new()
 Console.WriteLine($"Employee ID: {emp.Id}");
 Console.WriteLine($"Employee Name: {emp.Name}");
 Console.WriteLine($"Employee Salary: {emp.Salary:F2}");
-Console.WriteLine($"Employee Department: {emp.Department}");
+Console.WriteLine($"Employee Department: {emp.Department}");*/
 
 List<Products> productsList = [
     new ()
@@ -168,3 +168,12 @@ static void PrintEmployee(string name, int age, decimal salary)
     Console.WriteLine(
         $"Name: {name}, Age: {age}, Salary: {salary:F2}");
 }
+
+Employee employee = new Employee(1, "Mohit", 125000m, "IT");
+Console.WriteLine($"employee id: {employee.Id},  name: {employee.Name}, salary: {employee.Salary}, department: {employee.Department}");
+
+Employee secondEmployee =  new Employee(2, "Mohit", 125000m, "HR");
+Console.WriteLine($"employee id: {secondEmployee.Id},  name: {secondEmployee.Name}, salary: {secondEmployee.Salary}, department: {secondEmployee.Department}");
+
+Employee thirdEmployee = new Employee(id: 3, "Mohit", 125000m, "Finance");
+Console.WriteLine($"employee id: {secondEmployee.Id},  name: {thirdEmployee.Name}, salary: {thirdEmployee.Salary}, department: {thirdEmployee.Department}");
